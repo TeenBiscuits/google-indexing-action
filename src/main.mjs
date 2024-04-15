@@ -26,7 +26,7 @@ export const run = async () => {
   const siteUrlWithoutProtocol = siteUrl
     .replace('http://', 'http_')
     .replace('https://', 'https_')
-    .replace('/', '_')
+    .replaceAll('/', '_')
   const cacheRestoreKey = `google-indexing-action-${siteUrlWithoutProtocol}`
   const cacheKey = `${cacheRestoreKey}-${Date.now()}`
   const cachePath = `.cache/${siteUrlWithoutProtocol}.json`
